@@ -1,0 +1,30 @@
+title: "Dashboard"
+path: "dashboard"
+cards:
+
+#----Custom Weathercard---#
+
+  - type: 'custom:button-card'
+    template: card_weathercard
+    entity: sensor.weather_card_accuweather
+    show_label: false
+    show_name: false
+    show_icon: false
+    variables:
+      ulm_custom_card_weathercard_city: "Örsundsbro"
+      ulm_custom_card_weathercard_area: "Enköping"
+      ulm_custom_card_weathercard_bgimage_clear-night: center / cover no-repeat url("/local/images/weather_card_winter_night.jpg")
+      ulm_custom_card_weathercard_bgimage_cloudy: center / cover no-repeat url("/local/images/weather_card_winter_night.jpg")
+      ulm_custom_card_weathercard_bgimage_fog: center / cover no-repeat url("/local/images/weather_card_winter_night.jpg")
+      ulm_custom_card_weathercard_bgimage_hail: center / cover no-repeat url("/local/images/weather_card_winter_night.jpg")
+      ulm_custom_card_weathercard_bgimage_lightning: center / cover no-repeat url("/local/images/weather_card_winter_night.jpg")
+      ulm_custom_card_weathercard_bgimage_lightning-rainy: center / cover no-repeat url("/local/images/weather_card_winter_night.jpg")
+      ulm_custom_card_weathercard_bgimage_partlycloudy: center / cover no-repeat url("/local/images/weather_card_winter_night.jpg")
+      ulm_custom_card_weathercard_bgimage_pouring: center / cover no-repeat url("/local/images/weather_card_winter_night.jpg")
+      ulm_custom_card_weathercard_bgimage_rainy: center / cover no-repeat url("/local/images/weather_card_winter_night.jpg")
+      ulm_custom_card_weathercard_bgimage_snowy: center / cover no-repeat url("/local/images/weather_card_winter_night.jpg")
+      ulm_custom_card_weathercard_bgimage_snowy-rainy: center / cover no-repeat url("/local/images/weather_card_winter_night.jpg")
+      ulm_custom_card_weathercard_bgimage_sunny: center / cover no-repeat url("/local/images/weather_card_winter_night.jpg")
+      ulm_custom_card_weathercard_bgimage_windy: center / cover no-repeat url("/local/images/weather_card_winter_night.jpg")
+      ulm_custom_card_weathercard_bgimage_windy-variant: center / cover no-repeat url("/local/images/weather_card_winter_night.jpg")
+      ulm_custom_card_weathercard_bgimage_exceptional: center / cover no-repeat url("/local/images/weather_card_winter_night.jpg")
