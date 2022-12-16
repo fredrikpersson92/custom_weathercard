@@ -3,20 +3,20 @@ card_weathercard:
   variables:
     ulm_custom_card_weathercard_city: "Ad your city"
     ulm_custom_card_weathercard_area: "Add your area"
-    ulm_custom_card_weathercard_bgimage_clear-night: "none"
+    ulm_custom_card_weathercard_bgimage_clearnight: "none"
     ulm_custom_card_weathercard_bgimage_cloudy: "none"
     ulm_custom_card_weathercard_bgimage_fog: "none"
     ulm_custom_card_weathercard_bgimage_hail: "none"
     ulm_custom_card_weathercard_bgimage_lightning: "none"
-    ulm_custom_card_weathercard_bgimage_lightning-rainy: "none"
+    ulm_custom_card_weathercard_bgimage_lightningrainy: "none"
     ulm_custom_card_weathercard_bgimage_partlycloudy: "none"
     ulm_custom_card_weathercard_bgimage_pouring: "none"
     ulm_custom_card_weathercard_bgimage_rainy: "none"
     ulm_custom_card_weathercard_bgimage_snowy: "none"
-    ulm_custom_card_weathercard_bgimage_snowy-rainy: "none"
+    ulm_custom_card_weathercard_bgimage_snowyrainy: "none"
     ulm_custom_card_weathercard_bgimage_sunny: "none"
     ulm_custom_card_weathercard_bgimage_windy: "none"
-    ulm_custom_card_weathercard_bgimage_windy-variant: "none"
+    ulm_custom_card_weathercard_bgimage_windyvariant: "none"
     ulm_custom_card_weathercard_bgimage_exceptional: "none"
   custom_fields:
     main:
@@ -32,11 +32,67 @@ card_weathercard:
         label: "label"
         icon: "mdi:flash-alert-outline"
         state:
-
+          - value: 'clear-night'
+            styles:
+              card:
+              - background: "[[[ return variables.ulm_custom_card_weathercard_bgimage_clearnight ]]]"
+          - value: 'cloudy'
+            styles:
+              card:
+              - background: "[[[ return variables.ulm_custom_card_weathercard_bgimage_cloudy ]]]"
+          - value: 'fog'
+            styles:
+              card:
+              - background: "[[[ return variables.ulm_custom_card_weathercard_bgimage_fog ]]]"
+          - value: 'hail'
+            styles:
+              card:
+              - background: "[[[ return variables.ulm_custom_card_weathercard_bgimage_hail ]]]"
+          - value: 'lightning'
+            styles:
+              card:
+              - background: "[[[ return variables.ulm_custom_card_weathercard_bgimage_lightning ]]]"
+          - value: 'lightning-rainy'
+            styles:
+              card:
+              - background: "[[[ return variables.ulm_custom_card_weathercard_bgimage_lightningrainy ]]]"
           - value: 'partlycloudy'
             styles:
               card:
               - background: "[[[ return variables.ulm_custom_card_weathercard_bgimage_partlycloudy ]]]"
+          - value: 'pouring'
+            styles:
+              card:
+              - background: "[[[ return variables.ulm_custom_card_weathercard_bgimage_pouring ]]]"
+          - value: 'rainy'
+            styles:
+              card:
+              - background: "[[[ return variables.ulm_custom_card_weathercard_bgimage_rainy ]]]"
+          - value: 'snowy'
+            styles:
+              card:
+              - background: "[[[ return variables.ulm_custom_card_weathercard_bgimage_snowy ]]]"
+          - value: 'snowy-rainy'
+            styles:
+              card:
+              - background: "[[[ return variables.ulm_custom_card_weathercard_bgimage_snowyrainy ]]]"
+          - value: 'sunny'
+            styles:
+              card:
+              - background: "[[[ return variables.ulm_custom_card_weathercard_bgimage_sunny ]]]"
+          - value: 'windy'
+            styles:
+              card:
+              - background: "[[[ return variables.ulm_custom_card_weathercard_bgimage_windy ]]]"
+          - value: 'windy-variant'
+            styles:
+              card:
+              - background: "[[[ return variables.ulm_custom_card_weathercard_bgimage_windyvariant ]]]"
+          - value: 'exceptional'
+            styles:
+              card:
+              - background: "[[[ return variables.ulm_custom_card_weathercard_bgimage_exceptional ]]]"
+
         custom_fields:
           header: >
             [[[
