@@ -1,0 +1,146 @@
+---
+card_weathercard:
+  variables:
+    ulm_custom_card_weathercard_city: "Ad your city"
+    ulm_custom_card_weathercard_area: "Add your area"
+    ulm_custom_card_weathercard_bgimage_clear-night: "none"
+    ulm_custom_card_weathercard_bgimage_cloudy: "none"
+    ulm_custom_card_weathercard_bgimage_fog: "none"
+    ulm_custom_card_weathercard_bgimage_hail: "none"
+    ulm_custom_card_weathercard_bgimage_lightning: "none"
+    ulm_custom_card_weathercard_bgimage_lightning-rainy: "none"
+    ulm_custom_card_weathercard_bgimage_partlycloudy: "none"
+    ulm_custom_card_weathercard_bgimage_pouring: "none"
+    ulm_custom_card_weathercard_bgimage_rainy: "none"
+    ulm_custom_card_weathercard_bgimage_snowy: "none"
+    ulm_custom_card_weathercard_bgimage_snowy-rainy: "none"
+    ulm_custom_card_weathercard_bgimage_sunny: "none"
+    ulm_custom_card_weathercard_bgimage_windy: "none"
+    ulm_custom_card_weathercard_bgimage_windy-variant: "none"
+    ulm_custom_card_weathercard_bgimage_exceptional: "none"
+  custom_fields:
+    main:
+      card:
+        type: custom:button-card
+        entity: "[[[ return entity.entity_id ]]]"
+        tap_action:
+          action: "more-info"
+        show_icon: false
+        show_label: false
+        show_name: false
+        name: "name"
+        label: "label"
+        icon: "mdi:flash-alert-outline"
+        state:
+
+          - value: 'partlycloudy'
+            styles:
+              card:
+              - background: "[[[ return variables.ulm_custom_card_weathercard_bgimage_partlycloudy ]]]"
+        custom_fields:
+          header: >
+            [[[
+              return `<span>${entity.attributes.weather}</span>`
+            ]]]
+          temp: >
+            [[[
+              return `<span>${entity.attributes.temperature}°</span>`
+            ]]]
+          tlow: >
+            [[[
+              return `<span>Low: <b>${entity.attributes.forecast_0_temp_min}°C</b></span>`
+            ]]]
+          wind: >
+            [[[
+              return `<span>Wind: <b>${entity.attributes.wind_speed}</b></span>`
+            ]]]
+          thigh: >
+            [[[
+              return `<span>High: <b>${entity.attributes.forecast_0_temp_max}°C</b></span>`
+            ]]]
+        styles:
+          custom_fields:
+            header:
+              - align-self: "end"
+              - justify-self: "center"
+              - font-weight: "light"
+              - font-size: "24px"
+              - color: '#ffffff'
+              - filter: "opacity(60%)"
+            temp:
+              - align-self: "stretch"
+              - justify-self: "center"
+              - font-weight: "light"
+              - font-size: "120px"
+              - font-family: "Montserrat"
+              - color: '#ffffff'
+            tlow:
+              - align-self: "end"
+              - justify-self: "start"
+              - font-weight: "light"
+              - font-size: "16px"
+            wind:
+              - align-self: "end"
+              - justify-self: "stretch"
+              - font-weight: "light"
+              - font-size: "16px"
+            thigh:
+              - align-self: "end"
+              - justify-self: "end"
+              - font-weight: "light"
+              - font-size: "16px"
+          grid:
+            - grid-template-areas: '"header header header" "temp temp temp" "tlow wind thigh"'
+            - grid-template-columns: 1fr 1fr 1fr
+            - grid-template-rows: 1fr 2fr 1fr
+          card:
+            - box-shadow: "none"
+            - border-radius: "0px"
+            - padding: "25px 25px"
+            - place-self: "stretch center"
+            - height: "500px"
+    footer:
+      card:
+        type: "custom:button-card"
+        tap_action:
+          action: "none"
+        show_label: true
+        show_icon: false
+        name: "[[[ return variables.ulm_custom_card_weathercard_city ]]]"
+        label: "[[[ return variables.ulm_custom_card_weathercard_area ]]]"
+        styles:
+          label:
+            - align-self: "center"
+            - justify-self: "center"
+            - font-weight: "light"
+            - font-size: "18px"
+            - color: '#777777'
+          name:
+            - align-self: "center"
+            - justify-self: "center"
+            - font-weight: "normal"
+            - font-size: "24px"
+            - color: '#091033'
+          grid:
+            - grid-template-areas: "'n' 'l'"
+            - grid-template-columns: "auto"
+            - grid-template-rows: "min-content"
+          card:
+            - box-shadow: "none"
+            - background: '#ededed'
+            - padding: "20px 0px"
+            - border-radius: "0px"
+            - place-self: "center"
+            - height: "100px"
+  styles:
+    custom_fields:
+      main:
+        - overflow: hidden
+    card:
+      - overflow: hidden
+      - border-radius: "15px"
+      - padding: "0px"
+    grid:
+      - grid-template-areas: '"main" "footer"'
+      - grid-template-columns: 1fr
+      - grid-template-rows: 1fr  min-content
