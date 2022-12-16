@@ -1,0 +1,47 @@
+- platform: template
+  sensors:
+  
+  #Weathercard Sensor
+  #This sensor requires the Accuweather integration to pull data from
+  
+  weather_card_accuweather:
+      value_template: >
+        {{ states ('weather.accuweather')}}
+      friendly_name: "Weather Card"
+      attribute_templates:
+        temperature: >
+          {{ state_attr('weather.accuweather' , 'temperature') | round(0) }}
+        wind_speed: >
+          {{ state_attr('weather.accuweather' , 'wind_speed') | round(0) }} km/h
+        weather: |
+            {% if is_state('weather.accuweather', 'cloudy') -%}
+              Cloudy
+            {% elif is_state('weather.accuweather', 'partlycloudy') -%}
+              Partly Cloudy
+            {% elif is_state('weather.accuweather', 'sunny') -%}
+              Sunny
+            {% elif is_state('weather.accuweather', 'snowy') -%}
+              Snowy
+            {% elif is_state('weather.accuweather', 'raining') -%}
+              Raining
+            {% elif is_state('weather.accuweather', 'clear-night') -%}
+              Clear Night
+            {% elif is_state('weather.accuweather', 'fog') -%}
+              Fog
+            {% elif is_state('weather.accuweather', 'hail') -%}
+              Hail
+            {% elif is_state('weather.accuweather', 'lightning') -%}
+              Lightning
+            {% elif is_state('weather.accuweather', 'windy') -%}
+              Windy
+            {% elif is_state('weather.accuweather', 'pouring') -%}
+              Heavy rain
+            {% elif is_state('weather.accuweather', 'snowy-rainy') -%}
+              Snow with rain
+            {% elif is_state('weather.accuweather', 'lightning-rainy') -%}
+              Lightning with rain
+            {% endif %}
+        forecast_0_temp_max: >
+          {{ states ('sensor.accuweather_realfeel_temperature_max_0d') | round(0) }}
+        forecast_0_temp_min: >
+          {{ states ('sensor.accuweather_realfeel_temperature_min_0d') | round(0) }}
